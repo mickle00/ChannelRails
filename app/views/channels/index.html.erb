@@ -11,9 +11,9 @@
   <tbody>
     <% @channels.each do |channel| %>
       <tr>
-        <td><%= link_to channel.name, channel_path(channel) %></td>
-        <td><%= channel.number %></td>
-        <td><%= channel.hd %></td>
+        <td><%= link_to channel.Name, channel_path(channel) %></td>
+        <td><%= channel.Channel_Number__c %></td>
+        <td><%= channel.HD__c %></td>
         <td>
           <%= link_to 'Edit', edit_channel_path(channel), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', channel_path(channel), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

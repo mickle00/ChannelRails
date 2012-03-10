@@ -1,25 +1,25 @@
-<%= form_for @channel, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for :channel, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Channel</legend>
 
     <div class="control-group">
-      <%= f.label :name, :class => 'control-label' %>
+      <%= f.label :Name, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :name, :class => 'text_field' %>
+        <%= f.text_field :Name, :class => 'text_field' %>
       </div>
     </div>
 
     <div class="control-group">
-      <%= f.label :number, :class => 'control-label' %>
+      <%= f.label :Channel_Number__c, :class => 'control-label' %>
       <div class="controls">
-        <%= f.number_field :number, :class => 'number_field' %>
+        <%= f.number_field :Channel_Number__c, :class => 'number_field' %>
       </div>
     </div>
 
     <div class="control-group">
-      <%= f.label :hd, :class => 'control-label' %>
+      <%= f.label :HD__c, :class => 'control-label' %>
       <div class="controls">
-        <%= f.check_box :hd, :class => 'check_box' %>
+        <%= f.check_box :HD__c, :class => 'check_box' %>
       </div>
     </div>
 

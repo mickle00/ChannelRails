@@ -4,7 +4,6 @@ class AccountsController < ApplicationController
   
   def index
     @accounts = Account.all
-  # @accounts = Channel__c.all
   end
 
   def show
@@ -20,10 +19,18 @@ class AccountsController < ApplicationController
     end
   end
   
+  def create
+    @account = Account.create(params[:account])
+
+    respond_to do |format|
+        format.html { redirect_to @account, notice: 'Account was successfully created.' }
+        format.json { render json: @account, status: :created, location: @account }
+      end
+  end
+  
   def edit
     @account = Account.find(params[:id])
   end
-
 
   def update
     @account = Account.find(params[:id])

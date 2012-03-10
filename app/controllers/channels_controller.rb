@@ -1,8 +1,11 @@
 class ChannelsController < ApplicationController
+
+  include Databasedotcom::Rails::Controller
+      
   # GET /channels
   # GET /channels.json
   def index
-    @channels = Channel.all
+    @channels = Channel__c.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +16,7 @@ class ChannelsController < ApplicationController
   # GET /channels/1
   # GET /channels/1.json
   def show
-    @channel = Channel.find(params[:id])
+    @channel = Channel__c.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +27,7 @@ class ChannelsController < ApplicationController
   # GET /channels/new
   # GET /channels/new.json
   def new
-    @channel = Channel.new
+    @channel = Channel__c.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,29 +37,24 @@ class ChannelsController < ApplicationController
 
   # GET /channels/1/edit
   def edit
-    @channel = Channel.find(params[:id])
+    @channel = Channel__c.find(params[:id])
   end
 
   # POST /channels
   # POST /channels.json
   def create
-    @channel = Channel.new(params[:channel])
+    @channel = Channel__c.create(params[:channel])
 
     respond_to do |format|
-      if @channel.save
         format.html { redirect_to @channel, notice: 'Channel was successfully created.' }
         format.json { render json: @channel, status: :created, location: @channel }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @channel.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # PUT /channels/1
   # PUT /channels/1.json
   def update
-    @channel = Channel.find(params[:id])
+    @channel = Channel__c.find(params[:id])
 
     respond_to do |format|
       if @channel.update_attributes(params[:channel])
@@ -72,7 +70,7 @@ class ChannelsController < ApplicationController
   # DELETE /channels/1
   # DELETE /channels/1.json
   def destroy
-    @channel = Channel.find(params[:id])
+    @channel = Channel__c.find(params[:id])
     @channel.destroy
 
     respond_to do |format|
