@@ -1,10 +1,8 @@
-<h1>Channels</h1>
+<h1>Accounts</h1>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Number</th>
-      <th>HD</td>
       <th>Actions</th>
     </tr>
   </thead>
@@ -12,9 +10,12 @@
     <% @accounts.each do |account| %>
       <tr>
         <td><%= link_to account.Name, account_path(account) %></td>
-        <td><%= account.Id %></td>
+        <td>
+          <%= link_to 'Edit', edit_account_path(account), :class => 'btn btn-mini' %>
+          <%= link_to 'Delete', account_path(account), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<%= link_to 'New', new_account_path, :class => 'btn btn-primary' %>

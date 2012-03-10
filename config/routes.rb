@@ -1,5 +1,6 @@
 RailsChannels::Application.routes.draw do
   resources :channels
+  resources :accounts
   get "accounts/index"
   get "accounts/search"
   match "/accounts/:id", to: "accounts#show", as: 'account'
