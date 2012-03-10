@@ -1,5 +1,20 @@
-<ul>
-	<% @accounts.each do |account| %>
-	<li><%= link_to account.Name, account_path(account.Id) %></li>
-	<% end %>
-</ul>
+<h1>Channels</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>HD</td>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= link_to account.Name, account_path(account) %></td>
+        <td><%= account.Id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

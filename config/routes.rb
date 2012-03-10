@@ -1,5 +1,10 @@
 RailsChannels::Application.routes.draw do
   resources :channels
+  get "accounts/index"
+  get "accounts/search"
+  match "/accounts/:id", to: "accounts#show", as: 'account'
+  root :to => 'accounts#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
