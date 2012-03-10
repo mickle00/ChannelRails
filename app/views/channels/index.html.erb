@@ -1,0 +1,26 @@
+<h1>Channels</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>HD</td>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @channels.each do |channel| %>
+      <tr>
+        <td><%= link_to channel.name, channel_path(channel) %></td>
+        <td><%= channel.number %></td>
+        <td><%= check_box_tag(channel.hd) %></td>
+        <td>
+          <%= link_to 'Edit', edit_channel_path(channel), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', channel_path(channel), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_channel_path, :class => 'btn btn-primary' %>

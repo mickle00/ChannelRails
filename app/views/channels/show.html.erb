@@ -1,0 +1,16 @@
+<h1><%= @channel.name %></h1><br/>
+<p>
+  <b>Number</b><br>
+  <%= @channel.number %>
+</p>
+
+<p>
+  <b>HD</b><br>
+  <%= check_box_tag(@channel.hd) %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', channels_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_channel_path(@channel), :class => 'btn' %>
+  <%= link_to 'Delete', channel_path(@channel), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
